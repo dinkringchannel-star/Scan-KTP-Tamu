@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Scan KTP → Google Sheet</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>📷 Scan KTP</h1>
+    <p class="subtitle">Foto KTP Anda, data (NIK & Nama) akan otomatis tersimpan ke Google Sheet.</p>
+
+    <div class="camera-box">
+      <video id="video" autoplay playsinline></video>
+      <canvas id="canvas" style="display:none;"></canvas>
+    </div>
+
+    <div class="controls">
+      <button id="btnCapture" class="btn primary">📸 Ambil Foto</button>
+      <button id="btnRetake" class="btn secondary" style="display:none;">🔄 Ambil Ulang</button>
+      <button id="btnScan" class="btn primary" style="display:none;">🔍 Scan Data</button>
+    </div>
+
+    <div id="status" class="status"></div>
+
+    <div id="result" class="result" style="display:none;">
+      <h3>Hasil Scan</h3>
+      <div class="field">
+        <label>NIK</label>
+        <input type="text" id="nik" placeholder="16 digit NIK" />
+      </div>
+      <div class="field">
+        <label>Nama</label>
+        <input type="text" id="nama" placeholder="Nama Lengkap" />
+      </div>
+      <button id="btnSubmit" class="btn success">💾 Simpan ke Google Sheet</button>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/tesseract.js@5/dist/tesseract.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
